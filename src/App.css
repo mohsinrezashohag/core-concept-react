@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.player-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.friends-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.books-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
