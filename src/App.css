@@ -36,7 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.section-heading{
 
+  background-color: gray;
+  padding: 15px;
+  color: white;
+  margin-bottom:0px;
+}
 .player-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -51,3 +57,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
+.cinema-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
