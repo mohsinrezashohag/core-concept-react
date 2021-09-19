@@ -62,4 +62,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+.user-box{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+}
 

@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -70,6 +70,25 @@ function App() {
       <div className="counter-box">
         <Counter></Counter>
       </div>
+
+
+
+      <h2 className="section-heading">External user component</h2>
+      <div className="external-user-box">
+        <ExternalUser></ExternalUser>
+      </div>
+
+
+
+
+      {/* 
+      <h2 className="section-heading">Show user Specially component</h2>
+      <div className="special-user-box">
+        <User></User>
+      </div> */}
+
+
+
 
 
 
@@ -170,7 +189,6 @@ function Cinema(props) {
 
 // Advanced state component and hooks  
 
-
 function Counter(props) {
   const [count, setCount] = useState(5)
   console.log(count, setCount);
@@ -194,5 +212,49 @@ function Counter(props) {
 
 
 
+
+// external user
+
+function ExternalUser() {
+  const [users, setUsers] = useState([])
+  // useEffect(() => { console.log("inside use effect") }, [])
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(data => setUsers(data))
+
+  }, [])
+
+  console.log(users, setUsers);
+  return (
+    <div className="user-box">
+      {users.map(user => <div><User name={user.name} email={user.email}></User></div>)}
+      <p>User Length : {users.length}</p>
+    </div>
+  )
+}
+
+
+
+
+function User(props) {
+
+  return (
+
+    <div style={{
+      color: "white",
+      backgroundColor: "#f2cc8f",
+      padding: "3px",
+      margin: "3px",
+      height: '140px'
+
+
+    }}>
+      <h3>User Name  : {props.name}</h3>
+      <h2>User Email  : {props.email}</h2>
+    </div>
+  )
+
+}
 
 export default App;
